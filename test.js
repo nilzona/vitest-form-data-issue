@@ -10,14 +10,13 @@ describe("issue with FormData in jsdom", () => {
     const json = JSON.stringify(value);
     const data = new Blob([json], { type: "application/json" });
     
-    // We need to use Blob to specify the content-type here but we don't want
-    // a file-name, because this is not a file - override with empty string.
+    // set the Blob in FormData
     form.set(key, data);
 
+    // get the Blob back from FormData
     const retrievedBlob = form.get(key);
-    expect(retrievedBlob).toBeInstanceOf(Blob);
 
-    // If we reach this point without errors, the test passes
-    expect(true).toBe(true);
+    // this fails, as retrievedBlob is a string
+    expect(retrievedBlob).toBeInstanceOf(Blob);
   });
 });
