@@ -1,0 +1,16 @@
+{
+  "name": "vitest-form-data-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdom": "27.1.0",
+    "vitest": "4.0.6"
+  }
+}
